@@ -1,1 +1,66 @@
-<h1> Welcome to FundBot! </h1>
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Jurists — Juridiskā palīdzība 24/7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <header class="p-6 flex justify-between items-center bg-white shadow-sm">
+        <div class="text-2xl font-bold text-slate-800">AI<span class="text-blue-600">Jurists</span></div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium uppercase tracking-wider">
+            <a href="#" class="hover:text-blue-600">Sākums</a>
+            <a href="#" class="hover:text-blue-600">Pakalpojumi</a>
+            <a href="#" class="hover:text-blue-600">Par mums</a>
+        </nav>
+        <div class="text-sm font-semibold border-2 border-blue-600 px-4 py-2 rounded-lg text-blue-600">LV / RU</div>
+    </header>
+
+    <section class="hero-gradient text-white py-20 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Tūlītēja juridiskā palīdzība</h1>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Mūsu mākslīgais intelekts palīdzēs sastādīt dokumentus un sniegs konsultācijas 24 stundas diennaktī pēc Latvijas likumdošanas.</p>
+        
+        <button onclick="startAiCall()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all transform hover:scale-105">
+            Sākt bezmaksas sarunu
+        </button>
+        <p class="mt-4 text-sm text-slate-400">Nav nepieciešama reģistrācija</p>
+    </section>
+
+    <section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+            <div class="text-blue-600 text-4xl mb-4">⚖️</div>
+            <h3 class="text-xl font-bold mb-2">Likumu analīze</h3>
+            <p class="text-gray-600">Automātiska civillikuma un darba tiesību normu pārbaude.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+            <div class="text-blue-600 text-4xl mb-4">📄</div>
+            <h3 class="text-xl font-bold mb-2">Dokumentu izveide</h3>
+            <p class="text-gray-600">Iesniegumi, līgumi un sūdzības gatavas dažu sekunžu laikā.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+            <div class="text-blue-600 text-4xl mb-4">🔒</div>
+            <h3 class="text-xl font-bold mb-2">Konfidenciāli</h3>
+            <p class="text-gray-600">Jūsu dati netiek saglabāti un ir pilnībā aizsargāti (GDPR).</p>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-500 py-12 px-6 text-center text-xs">
+        <p class="mb-4 uppercase tracking-widest">AI Jurists Latvija © 2026</p>
+        <p class="max-w-3xl mx-auto">UZMANĪBU: Šī platforma ir informatīvs rīks. Pakalpojumu sniedzējs nav zvērināts advokāts un nesniedz oficiālu juridisko palīdzību tiesas procesā. Lēmumus pieņemiet, konsultējoties ar speciālistu.</p>
+    </footer>
+
+    <script>
+        function startAiCall() {
+            alert('Šeit tiks pieslēgta jūsu Gemini API balss saskarne!');
+            // Сюда вставляется код интеграции (Vapi/WebRTC)
+        }
+    </script>
+</body>
+</html>
