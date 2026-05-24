@@ -1,16 +1,484 @@
-
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMIŠ Serviss — Профессиональный ремонт грузовых автомобилей в Латвии</title>
+    
+    <!-- STREAMING_CHUNK: Setting up head configuration and importing Google fonts... -->
+    <!-- Подключение шрифта Inter для максимальной читаемости -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Использование Tailwind CSS для чистой и гибкой верстки -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        garage: {
+                            900: '#0F111A', // Глубокий асфальтовый
+                            800: '#151824', // Графитовый
+                            700: '#1F2438', // Светло-графитовый
+                            accent: '#E11D48', // Спортивный красный (Crimson Red)
+                            accentHover: '#BE123C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
             }
-
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', () => {
-                    successModal.classList.add('opacity-0');
-                    successModal.querySelector('.transform').classList.add('scale-95');
-                    setTimeout(() => {
-                        successModal.classList.add('hidden');
-                    }, 300);
-                });
-            }
-        });
+        }
     </script>
+    
+    <!-- STREAMING_CHUNK: Setting up general transitions and performance styles... -->
+    <style>
+        /* Плавные переходы для кнопок и карточек */
+        .btn-transition {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Анимация медленного дыхания для фоновых неоновых пятен */
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.15); opacity: 0.6; }
+        }
+        .animate-glow {
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-garage-900 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-garage-700/30 via-garage-900 to-garage-900 text-white font-sans antialiased selection:bg-garage-accent selection:text-white relative min-h-screen overflow-x-hidden">
+
+    <!-- Живая технологичная подложка (сетка на фоне) -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
+
+    <!-- Размытые неоновые сферы для придания глубины сайту -->
+    <div class="absolute top-[15%] left-[-10%] w-[600px] h-[600px] bg-garage-accent/5 rounded-full blur-[150px] pointer-events-none z-0 animate-glow"></div>
+    <div class="absolute top-[50%] right-[-10%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[130px] pointer-events-none z-0 animate-glow" style="animation-delay: -4s;"></div>
+
+    <!-- STREAMING_CHUNK: Building navigation header with enlarged IMIŠ Serviss logo... -->
+    <!-- Шапка сайта (Header) -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-garage-900/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            
+            <!-- Существенно увеличенный авто-логотип IMIŠ Serviss -->
+            <a href="#" class="flex items-center space-x-4 group">
+                <div class="bg-garage-accent text-white font-black text-3xl px-5 py-2 rounded-md tracking-wider transform transition-transform group-hover:scale-105">I</div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-3xl tracking-widest text-white leading-none">IMIŠ</span>
+                    <span class="font-bold text-[13px] tracking-[0.35em] text-gray-400 uppercase leading-none mt-2">SERVISS</span>
+                </div>
+            </a>
+
+            <!-- Навигация по разделам -->
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#services" class="text-gray-300 hover:text-garage-accent transition-colors">Услуги</a>
+                <a href="#advantages" class="text-gray-300 hover:text-garage-accent transition-colors">Преимущества</a>
+                <a href="#request" class="text-gray-300 hover:text-garage-accent transition-colors">Запись на сервис</a>
+                <a href="#contacts" class="text-gray-300 hover:text-garage-accent transition-colors">Контакты</a>
+            </nav>
+
+            <!-- Кнопка быстрого вызова инженера и телефон -->
+            <div class="flex items-center space-x-6">
+                <a href="tel:+37129215755" class="hidden sm:inline-block text-lg font-black text-white hover:text-garage-accent transition-colors tracking-wide">
+                    +371 29215755
+                </a>
+                <a href="#request" class="btn-transition bg-garage-accent hover:bg-garage-accentHover px-5 py-3 rounded-lg text-xs font-bold tracking-wider uppercase shadow-lg shadow-garage-accent/20">
+                    Записаться на ремонт
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- STREAMING_CHUNK: Designing Baltic oriented Cargo/Truck Hero banner... -->
+    <!-- Главный экран (Hero Section) -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex items-center overflow-hidden">
+        <!-- Легкое фоновое свечение, напоминающее фары грузовика на ночной трассе -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+            <div class="absolute top-1/4 right-10 w-[400px] h-[400px] rounded-full bg-garage-accent/15 blur-[120px]"></div>
+            <div class="absolute bottom-10 left-10 w-[300px] h-[300px] rounded-full bg-blue-500/10 blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Описание автосервиса -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-garage-accent/10 border border-garage-accent/30 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-garage-accent uppercase">
+                    <span>Ремонт и обслуживание грузового транспорта в Латвии</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                    Профессиональный ремонт <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-garage-accent">грузовиков и полуприцепов</span>
+                </h1>
+                
+                <p class="text-gray-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                    Специализированный грузовой сервис IMIŠ Serviss в Spilve. Оказываем полный комплекс услуг по техническому обслуживанию тягачей, прицепов и спецтехники ведущих европейских марок.
+                </p>
+
+                <!-- Основные триггеры -->
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#services" class="btn-transition bg-white text-garage-900 font-bold px-6 py-4 rounded-lg hover:bg-gray-100 shadow-xl flex items-center space-x-2">
+                        <span>Наши услуги</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#request" class="btn-transition border border-white/20 hover:border-white px-6 py-4 rounded-lg font-bold text-gray-300 hover:text-white bg-white/5 backdrop-blur-sm">
+                        Узнать стоимость работ
+                    </a>
+                </div>
+            </div>
+
+            <!-- STREAMING_CHUNK: Rendering trust and safety widgets... -->
+            <!-- Правая часть: Быстрый виджет с преимуществами СТО -->
+            <div class="lg:col-span-5">
+                <div class="bg-garage-800/60 backdrop-blur-md border border-white/10 p-8 rounded-2xl relative shadow-2xl">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 bg-garage-accent/10 rounded-lg text-garage-accent">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Гарантия на выполненные работы</h3>
+                                <p class="text-gray-400 text-sm mt-1">Официальная гарантия на все установленные детали и услуги нашего сервиса.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 bg-garage-accent/10 rounded-lg text-garage-accent">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Оборудование дилерского уровня</h3>
+                                <p class="text-gray-400 text-sm mt-1">Современные диагностические стенды и сертифицированный инструмент для тяжелой техники.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 bg-garage-accent/10 rounded-lg text-garage-accent">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="19" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Удобный заезд в боксы</h3>
+                                <p class="text-gray-400 text-sm mt-1">Просторная охраняемая территория в Spilve, Babīte. Легкий съезд с трассы для длинномерных сцепок.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK: Structuring truck repair services grid... -->
+    <!-- Раздел: Услуги грузового автосервиса (Services) -->
+    <section id="services" class="py-24 bg-garage-800/40 backdrop-blur-sm border-y border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold tracking-tight uppercase">Наши услуги по <span class="text-garage-accent">ремонту</span></h2>
+                <p class="text-gray-400 text-sm mt-4">Обслуживаем тягачи и спецтехнику Scania, Volvo, MAN, DAF, Mercedes-Benz, Iveco, Renault.</p>
+            </div>
+
+            <!-- Сетка услуг -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                
+                <!-- Услуга 1: Ремонт ДВС и КПП -->
+                <div class="bg-garage-900/80 backdrop-blur-sm border border-white/5 p-6 rounded-xl hover:border-garage-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <!-- Иконка двигателя -->
+                        <div class="text-garage-accent mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Ремонт ДВС и КПП</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Капитальный ремонт дизельных двигателей и коробок передач грузовых авто.</p>
+                    </div>
+                    <a href="#request" class="text-xs font-semibold text-garage-accent group-hover:text-white mt-6 inline-flex items-center space-x-1">
+                        <span>Записаться</span>
+                        <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Услуга 2: Диагностика и Электрика -->
+                <div class="bg-garage-900/80 backdrop-blur-sm border border-white/5 p-6 rounded-xl hover:border-garage-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <!-- Иконка электрики/диагностики -->
+                        <div class="text-garage-accent mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Диагностика и Электрика</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Компьютерная диагностика ЭБУ, поиск неисправностей в проводке и датчиках.</p>
+                    </div>
+                    <a href="#request" class="text-xs font-semibold text-garage-accent group-hover:text-white mt-6 inline-flex items-center space-x-1">
+                        <span>Записаться</span>
+                        <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Услуга 3: Ходовая часть -->
+                <div class="bg-garage-900/80 backdrop-blur-sm border border-white/5 p-6 rounded-xl hover:border-garage-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <!-- Иконка ходовой -->
+                        <div class="text-garage-accent mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 8a8 8 0 11-16 0 8 8 0 0116 0z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Ходовая часть</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Ремонт осей SAF, BPW, ROR. Замена рессор, сайлентблоков, амортизаторов тягача.</p>
+                    </div>
+                    <a href="#request" class="text-xs font-semibold text-garage-accent group-hover:text-white mt-6 inline-flex items-center space-x-1">
+                        <span>Записаться</span>
+                        <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Услуга 4: Пневматика и Тормоза -->
+                <div class="bg-garage-900/80 backdrop-blur-sm border border-white/5 p-6 rounded-xl hover:border-garage-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <!-- Иконка тормозов -->
+                        <div class="text-garage-accent mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.24.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.001-1.22-.843-1.992-1.413a1 1 0 00-1.175 0l-3.97 2.883a1 1 0 00-.364-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 10.1c-.773-.57-.375-1.81.587-1.81h4.907a1 1 0 00.95-.69l1.519-4.674z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Пневматика и Тормоза</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Ремонт суппортов, регулировка ABS/EBS тормозных систем прицепов (Wabco).</p>
+                    </div>
+                    <a href="#request" class="text-xs font-semibold text-garage-accent group-hover:text-white mt-6 inline-flex items-center space-x-1">
+                        <span>Записаться</span>
+                        <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Услуга 5: ТО и Замена масел -->
+                <div class="bg-garage-900/80 backdrop-blur-sm border border-white/5 p-6 rounded-xl hover:border-garage-accent/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <!-- Иконка обслуживания -->
+                        <div class="text-garage-accent mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Техническое обслуживание</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Экспресс-замена масел, замена воздушных, топливных и масляных фильтров.</p>
+                    </div>
+                    <a href="#request" class="text-xs font-semibold text-garage-accent group-hover:text-white mt-6 inline-flex items-center space-x-1">
+                        <span>Записаться</span>
+                        <span>→</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK: Displaying advantages section... -->
+    <!-- Раздел: Почему доверяют IMIŠ Serviss (Advantages) -->
+    <section id="advantages" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Описание преимуществ -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-extrabold tracking-tight uppercase leading-tight">
+                        Complex подход к <br>
+                        <span class="text-garage-accent">грузовому ремонту</span>
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Мы понимаем, что каждый день простоя коммерческого транспорта — это прямые убытки для вашего бизнеса. Сервис IMIŠ Serviss делает все, чтобы вернуть ваш грузовик на рейс в кратчайшие сроки без компромиссов в качестве.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 rounded-full bg-garage-accent"></div>
+                            <span class="font-medium">Штат профессиональных мастеров с опытом ремонта тяжелой техники</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 rounded-full bg-garage-accent"></div>
+                            <span class="font-medium">Собственный склад востребованных запчастей для оперативного ремонта</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 rounded-full bg-garage-accent"></div>
+                            <span class="font-medium">Гибкие условия работы и постоплаты для корпоративных клиентов</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блоки со статистикой -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-garage-800/50 backdrop-blur-sm border border-white/5 p-8 rounded-xl text-center shadow-lg">
+                        <div class="text-4xl font-extrabold text-garage-accent">3 бокса</div>
+                        <p class="font-semibold text-white mt-2">Просторный сервис</p>
+                        <p class="text-gray-400 text-xs mt-1">Оборудованные посты под тягачи и полуприцепы.</p>
+                    </div>
+
+                    <div class="bg-garage-800/50 backdrop-blur-sm border border-white/5 p-8 rounded-xl text-center shadow-lg">
+                        <div class="text-4xl font-extrabold text-garage-accent">99%</div>
+                        <p class="font-semibold text-white mt-2">Точность диагностики</p>
+                        <p class="text-gray-400 text-xs mt-1">Быстро находим и локализуем неисправность.</p>
+                    </div>
+
+                    <div class="bg-garage-800/50 backdrop-blur-sm border border-white/5 p-8 rounded-xl text-center shadow-lg">
+                        <div class="text-4xl font-extrabold text-garage-accent">24/7</div>
+                        <p class="font-semibold text-white mt-2">Прием по договоренности</p>
+                        <p class="text-gray-400 text-xs mt-1">Готовы принять технику при аварийных поломках.</p>
+                    </div>
+
+                    <div class="bg-garage-800/50 backdrop-blur-sm border border-white/5 p-8 rounded-xl text-center shadow-lg">
+                        <div class="text-4xl font-extrabold text-garage-accent">0 €</div>
+                        <p class="font-semibold text-white mt-2">Скрытых платежей</p>
+                        <p class="text-gray-400 text-xs mt-1">Все согласования работ строго до начала ремонта.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK: Coding the request form with Latvian input format... -->
+    <!-- Раздел: Форма отправки заявки (Request Form) -->
+    <section id="request" class="py-24 bg-garage-800/40 backdrop-blur-sm border-t border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Левый промо-блок формы -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-3xl font-extrabold uppercase tracking-tight leading-tight">
+                        Запишитесь на <br>
+                        <span class="text-garage-accent">диагностику СТО</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Опишите неисправность или укажите необходимые сервисные работы. Наш технический специалист свяжется с вами, чтобы обсудить время заезда и сориентировать по стоимости.
+                    </p>
+                    
+                    <div class="bg-garage-900/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 space-y-3 shadow-inner">
+                        <h4 class="font-semibold text-white flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            Мастер-приемщик на связи
+                        </h4>
+                        <p class="text-xs text-gray-400">Мы оперативно забронируем свободное время в боксе для вашего тягача.</p>
+                    </div>
+                </div>
+
+                <!-- Правая часть: Удобная простая форма -->
+                <div class="lg:col-span-7">
+                    <div class="bg-garage-900/90 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-2xl">
+                        <form id="partsForm" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" for="clientName">Имя или компания</label>
+                                    <input type="text" id="clientName" required class="w-full bg-garage-800 border border-white/10 rounded-lg px-4 py-3.5 text-white text-sm focus:border-garage-accent outline-none transition-colors" placeholder="Контактное лицо">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" for="clientPhone">Телефон для связи</label>
+                                    <input type="tel" id="clientPhone" required class="w-full bg-garage-800 border border-white/10 rounded-lg px-4 py-3.5 text-white text-sm focus:border-garage-accent outline-none transition-colors" placeholder="+371 29215755">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" for="clientMessage">Марка грузовика/полуприцепа и описание поломки</label>
+                                <textarea id="clientMessage" rows="4" required class="w-full bg-garage-800 border border-white/10 rounded-lg px-4 py-3.5 text-white text-sm focus:border-garage-accent outline-none transition-colors" placeholder="Например: Scania R420, диагностика тормозов прицепа Schmitz или замена сцепления"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full btn-transition bg-garage-accent hover:bg-garage-accentHover text-white font-bold py-4 rounded-lg tracking-wider uppercase text-sm shadow-lg shadow-garage-accent/20">
+                                Отправить заявку в сервис
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK: Integrating google maps and Babite contact details... -->
+    <!-- Раздел: Контакты и Карта (Contacts) -->
+    <section id="contacts" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Левый блок: Информация -->
+                <div class="lg:col-span-5 space-y-8">
+                    <h2 class="text-3xl font-extrabold uppercase tracking-tight">Контакты сервиса</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-xl">📍</span>
+                            <div>
+                                <h4 class="font-bold">Наш адрес</h4>
+                                <p class="text-gray-400 text-sm mt-1">"Grietēni", Spilve, Babītes pagasts, Mārupes novads, LV-2101</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="text-xl">📞</span>
+                            <div>
+                                <h4 class="font-bold">Телефон для связи и записи</h4>
+                                <a href="tel:+37129215755" class="text-garage-accent font-black text-xl hover:underline mt-1 block">+371 29215755</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="text-xl">✉️</span>
+                            <div>
+                                <h4 class="font-bold">E-mail для реквизитов и вопросов</h4>
+                                <a href="mailto:info@imis.lv" class="text-gray-300 text-sm hover:underline mt-1 block">info@imis.lv</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="text-xl">🕒</span>
+                            <div>
+                                <h4 class="font-bold">Режим работы</h4>
+                                <p class="text-gray-400 text-sm mt-1">Ежедневно: с 09:00 до 19:00 (без выходных)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правый блок: Реальная интерактивная Google Карта Бабите/Марупе -->
+                <div class="lg:col-span-7">
+                    <div class="bg-garage-800 border border-white/5 rounded-2xl overflow-hidden relative h-[420px] shadow-lg flex flex-col justify-between">
+                        <!-- Интерактивная карта Google, центрированная на Grietēni, Spilve -->
+                        <div class="absolute inset-0 z-0">
+                            <iframe class="absolute inset-0 w-full h-full border-0" src="https://maps.google.com/maps?q=Griet%C4%93ni%2C%20Spilve%2C%20Bab%C4%ABtes%20pagasts&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        
+                        <!-- Защитная плашка с быстрым инфо -->
+                        <div class="relative z-10 m-6 p-4 bg-garage-900/90 border border-white/5 rounded-lg max-w-xs backdrop-blur-md">
+                            <span class="inline-block bg-garage-accent text-white font-bold text-[10px] px-2 py-1 rounded tracking-wider uppercase">СТО в Spilve</span>
+                            <h4 class="text-white font-extrabold text-base mt-2">IMIŠ Serviss</h4>
+                            <p class="text-gray-400 text-xs mt-1">"Grietēni", Spilve. Удобный съезд с Рижской окружной автотрассы для фур.</p>
+                        </div>
+
+                        <!-- Декоративные метки снизу карты -->
+                        <div class="relative z-10 flex flex-wrap gap-2 m-6">
+                            <span class="bg-garage-900/95 text-white font-bold text-xs px-3 py-1.5 rounded-md border border-white/5 backdrop-blur-md">🔧 Грузовой сервис</span>
+                            <span class="bg-garage-900/95 text-white font-bold text-xs px-3 py-1.5 rounded-md border border-white/5 backdrop-blur-md">🚛 Доступно сцепкам</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK: Cleaning up footer structure... -->
+    <!-- Подвал сайта (Footer) -->
+    <footer class="bg-garage-800/60 backdrop-blur-md border-t border-white/5 py-12 relative z-10 text-center text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            
+            <!-- Увеличенный премиальный логотип IMIŠ Serviss в подвале -->
+            <div class="font-black tracking-widest text-white text-3xl flex items-center justify-center space-x-2">
+                <span class="bg-garage-accent text-white px-4 py-1.5 rounded text-2xl">I</span>
+                <span>IMIŠ SERVISS</span>
+            </div>
+            
+            <!-- Реквизиты латвийского юридического лица -->
+            <div class="text-xs text-gray-500">
+                SIA "IMIŠ" &bull; Reģ. Nr. 40203000000 &bull; "Grietēni", Spilve, Babītes pagasts, Mārupes novads, LV-2101
+            </div>
+            
+            <div class="h-[1px] w-12 bg-white/10 mx-auto"></div>
+            <p class="text-[11px] text-gray-600">&copy; 2026 IMIŠ SERVISS. Visas tiesības aizsargātas.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
