@@ -128,8 +128,8 @@
 
     <!-- Шапка сайта (Header) -->
     <header class="fixed top-0 left-0 w-full z-40 bg-garage-900/60 backdrop-blur-2xl border-b border-white/10">
-        <!-- На мобильных элементам задан контролируемый отступ и сдвиг на 30% ближе к центру, убран жесткий justify-between -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-start sm:justify-between items-center overflow-hidden gap-x-4 sm:gap-x-6">
+        <!-- flex-row в связке с минимальным зазором gap-x-2 на мобильных ставит кнопку сразу за логотипом -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex flex-row items-center gap-x-2 sm:gap-x-6">
             
             <!-- Авто-логотип IMIŠ Serviss -->
             <a href="#" class="flex items-center space-x-3 sm:space-x-4 group shrink-0">
@@ -140,7 +140,17 @@
                 </div>
             </a>
 
-            <!-- Навигация по разделам -->
+            <!-- Кнопка Позвонить для мобильных: стоит сразу за логотипом, расстояние убрано -->
+            <div class="inline-block sm:hidden shrink-0">
+                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py-2.5 px-3 rounded-lg flex items-center space-x-2 text-sm transition-all hover:bg-white/10 hover:border-garage-accent/50 group max-w-[120px]">
+                    <svg class="w-4 h-4 text-garage-accent group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.529 4.528l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.42 18 2 12.58 2 6V3z"/>
+                    </svg>
+                    <span class="uppercase tracking-wider text-[11px] font-extrabold truncate">Позвонить</span>
+                </a>
+            </div>
+
+            <!-- Навигация по разделам (Появляется на десктопах) -->
             <nav class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide mx-auto">
                 <a href="#services" class="text-gray-400 hover:text-white transition-colors relative py-2 group">Услуги<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-garage-accent transition-all duration-300 group-hover:w-full"></span></a>
                 <a href="#advantages" class="text-gray-400 hover:text-white transition-colors relative py-2 group">Преимущества<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-garage-accent transition-all duration-300 group-hover:w-full"></span></a>
@@ -148,21 +158,15 @@
                 <a href="#contacts" class="text-gray-400 hover:text-white transition-colors relative py-2 group">Контакты<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-garage-accent transition-all duration-300 group-hover:w-full"></span></a>
             </nav>
 
-            <!-- Кнопки действий (Сдвинуты на 30% ближе к логотипу на мобильных благодаря ml-auto sm:ml-0 и уменьшенному gap) -->
-            <div class="flex items-center space-x-3 shrink-0 ml-auto sm:ml-0 pr-2 sm:pr-0">
-                
-                <!-- Адаптивная Кнопка-Телефон (Максимально защищена от вылета за границы экрана) -->
-                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py-2.5 px-3 sm:px-4 rounded-lg flex items-center space-x-2 text-sm transition-all hover:bg-white/10 hover:border-garage-accent/50 group max-w-[130px] sm:max-w-none">
-                    <!-- Иконка трубки телефона -->
+            <!-- Блок для ПК-кнопок (На мобильных скрывается, чтобы не занимать место) -->
+            <div class="hidden sm:flex items-center space-x-3 shrink-0 ml-auto">
+                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py-2.5 px-4 rounded-lg flex items-center space-x-2 text-sm transition-all hover:bg-white/10 hover:border-garage-accent/50 group">
                     <svg class="w-4 h-4 text-garage-accent group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.529 4.528l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.42 18 2 12.58 2 6V3z"/>
                     </svg>
-                    <!-- Текст кнопки звонка -->
-                    <span class="inline sm:hidden uppercase tracking-wider text-[11px] font-extrabold truncate">Позвонить</span>
-                    <span class="hidden sm:inline tracking-wide font-black whitespace-nowrap">+371 29215755</span>
+                    <span class="tracking-wide font-black whitespace-nowrap">+371 29215755</span>
                 </a>
 
-                <!-- Кнопка записи (Только для планшетов и ПК) -->
                 <a href="#request" class="hidden md:inline-block laser-btn bg-garage-accent hover:bg-garage-accentHover px-5 py-3 rounded-lg text-xs font-bold tracking-wider uppercase shadow-lg shadow-garage-accent/30 whitespace-nowrap">
                     Записаться на ремонт
                 </a>
