@@ -127,30 +127,30 @@
     <div class="absolute top-[40%] right-[-15%] w-[300px] sm:w-[700px] h-[300px] sm:h-[700px] bg-cyan-500/10 rounded-full blur-[100px] sm:blur-[150px] pointer-events-none z-0 laser-glow-2"></div>
 
     <!-- Шапка сайта (Header) -->
-    <header class="fixed top-0 left-0 w-full z-40 bg-garage-900/60 backdrop-blur-2xl border-b border-white/10 overflow-hidden max-w-full">
-        <!-- Ограничили общие отступы px-2 на мобильных, чтобы выиграть 5% ширины экрана -->
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-20 flex flex-row items-center gap-x-1 sm:gap-x-6">
+    <header class="fixed top-0 left-0 w-full z-40 bg-garage-900/60 backdrop-blur-2xl border-b border-white/10 overflow-hidden">
+        <!-- max-w-[95vw] сужает шапку на 5% на мобилках, mx-auto центрирует её обратно -->
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-1 sm:px-6 lg:px-8 h-20 flex flex-row items-center justify-between sm:justify-start gap-x-2 sm:gap-x-6">
             
-            <!-- Компактный логотип для мобильных (уменьшены шрифты и внутренние отступы) -->
-            <a href="#" class="flex items-center space-x-2 sm:space-x-4 group shrink-0">
-                <div class="bg-garage-accent text-white font-black text-lg sm:text-3xl px-2.5 sm:px-5 py-1 sm:py-2 rounded-md tracking-wider transform transition-all duration-500 group-hover:rotate-[360deg]">I</div>
+            <!-- Компактный логотип -->
+            <a href="#" class="flex items-center space-x-1.5 sm:space-x-4 group shrink-0">
+                <div class="bg-garage-accent text-white font-black text-base sm:text-3xl px-2 sm:px-5 py-0.5 sm:py-2 rounded-md tracking-wider transform transition-all duration-500 group-hover:rotate-[360deg]">I</div>
                 <div class="flex flex-col">
-                    <span class="font-extrabold text-lg sm:text-3xl tracking-widest text-white leading-none group-hover:text-garage-accent transition-colors duration-300">IMIŠ</span>
-                    <span class="font-bold text-[9px] sm:text-[13px] tracking-[0.2em] sm:tracking-[0.35em] text-gray-400 uppercase leading-none mt-1 sm:mt-2">SERVISS</span>
+                    <span class="font-extrabold text-base sm:text-3xl tracking-widest text-white leading-none group-hover:text-garage-accent transition-colors duration-300">IMIŠ</span>
+                    <span class="font-bold text-[8px] sm:text-[13px] tracking-[0.18em] sm:tracking-[0.35em] text-gray-400 uppercase leading-none mt-1 sm:mt-2">SERVISS</span>
                 </div>
             </a>
 
-            <!-- Кнопка Позвонить: теперь со 100% видимостью слова, без переносов и сжатия -->
+            <!-- Кнопка Позвонить: Текст гарантированно не переносится, кнопка не сжимается -->
             <div class="inline-block sm:hidden shrink-0">
-                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py-2 px-2.5 rounded-lg flex items-center space-x-1.5 text-sm transition-all hover:bg-white/10 hover:border-garage-accent/50 group">
-                    <svg class="w-3.5 h-3.5 text-garage-accent group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py-2 px-2.5 rounded-lg flex items-center space-x-1 transition-all hover:bg-white/10 hover:border-garage-accent/50 group">
+                    <svg class="w-3 h-3 text-garage-accent group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.529 4.528l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.42 18 2 12.58 2 6V3z"/>
                     </svg>
-                    <span class="uppercase tracking-wider text-[10px] font-black whitespace-nowrap block">Позвонить</span>
+                    <span class="uppercase tracking-wider text-[9px] font-black whitespace-nowrap block">Позвонить</span>
                 </a>
             </div>
 
-            <!-- Навигация по разделам (Появляется на десктопах) -->
+            <!-- Навигация по разделам (ПК) -->
             <nav class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide mx-auto">
                 <a href="#services" class="text-gray-400 hover:text-white transition-colors relative py-2 group">Услуги<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-garage-accent transition-all duration-300 group-hover:w-full"></span></a>
                 <a href="#advantages" class="text-gray-400 hover:text-white transition-colors relative py-2 group">Преимущества<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-garage-accent transition-all duration-300 group-hover:w-full"></span></a>
@@ -160,13 +160,12 @@
 
             <!-- Блок для ПК-кнопок -->
             <div class="hidden sm:flex items-center space-x-3 shrink-0 ml-auto">
-                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py-2.5 px-4 rounded-lg flex items-center space-x-2 text-sm transition-all hover:bg-white/10 hover:border-garage-accent/50 group">
+                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py.2.5 px-4 rounded-lg flex items-center space-x-2 text-sm transition-all hover:bg-white/10 hover:border-garage-accent/50 group">
                     <svg class="w-4 h-4 text-garage-accent group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.529 4.528l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.42 18 2 12.58 2 6V3z"/>
                     </svg>
                     <span class="tracking-wide font-black whitespace-nowrap">+371 29215755</span>
                 </a>
-
                 <a href="#request" class="hidden md:inline-block laser-btn bg-garage-accent hover:bg-garage-accentHover px-5 py-3 rounded-lg text-xs font-bold tracking-wider uppercase shadow-lg shadow-garage-accent/30 whitespace-nowrap">
                     Записаться на ремонт
                 </a>
@@ -175,12 +174,13 @@
     </header>
 
     <!-- Главный экран (Hero Section) -->
-    <section class="relative pt-28 pb-16 lg:pt-52 lg:pb-36 flex items-center overflow-hidden w-full max-w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <section class="relative pt-28 pb-16 lg:pt-52 lg:pb-36 flex items-center overflow-hidden w-full">
+        <!-- Контейнеры сжаты на 5% (max-w-[95vw]) на мобильных -->
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             <!-- Описание автосервиса -->
-            <div class="lg:col-span-7 space-y-6 sm:space-y-8 max-w-2xl w-full overflow-hidden">
-                <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-garage-accent/20 to-cyan-500/10 border border-garage-accent/40 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider text-white uppercase max-w-full">
+            <div class="lg:col-span-7 space-y-6 sm:space-y-8 max-w-2xl w-full">
+                <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-garage-accent/20 to-cyan-500/10 border border-garage-accent/40 px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider text-white uppercase max-w-full">
                     <span class="w-2 h-2 rounded-full bg-garage-accent shrink-0"></span>
                     <span class="truncate">Ремонт грузового транспорта в Латвии</span>
                 </div>
@@ -193,13 +193,12 @@
                     Специализированный грузовой сервис IMIŠ Serviss в Spilve. Оказываем полный комплекс услуг по техническому обслуживанию тягачей, прицепов и спецтехники ведущих европейских марок.
                 </p>
 
-                <!-- Основные кнопки -->
-                <div class="flex flex-col sm:flex-row gap-4 pt-2 sm:pt-4">
-                    <a href="#services" class="laser-btn bg-white text-garage-900 font-black px-6 py-3.5 sm:px-8 sm:py-4 rounded-lg shadow-2xl flex items-center justify-center space-x-3 transform text-sm">
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#services" class="laser-btn bg-white text-garage-900 font-black px-6 py-3.5 rounded-lg shadow-2xl flex items-center justify-center space-x-3 text-sm">
                         <span>Наши услуги</span>
                         <svg class="w-4 h-4 text-garage-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="#request" class="laser-btn border border-white/10 hover:border-garage-accent/50 px-6 py-3.5 sm:px-8 sm:py-4 rounded-lg font-bold text-gray-300 hover:text-white bg-white/5 backdrop-blur-md text-center text-sm">
+                    <a href="#request" class="laser-btn border border-white/10 hover:border-garage-accent/50 px-6 py-3.5 rounded-lg font-bold text-gray-300 hover:text-white bg-white/5 backdrop-blur-md text-center text-sm">
                         Узнать стоимость
                     </a>
                 </div>
@@ -207,36 +206,36 @@
 
             <!-- Правая часть: Быстрый виджет с преимуществами СТО -->
             <div class="lg:col-span-5 w-full">
-                <div class="cyber-card p-6 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden backdrop-blur-xl">
+                <div class="cyber-card p-5 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden backdrop-blur-xl">
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl"></div>
-                    <div class="space-y-6 sm:space-y-8">
-                        <div class="flex items-start space-x-4 group">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
                             <div class="p-3 bg-garage-accent/10 rounded-xl text-garage-accent border border-garage-accent/30 shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                             </div>
                             <div>
-                                <h3 class="font-extrabold text-base sm:text-lg text-white">Гарантия на выполненные работы</h3>
-                                <p class="text-gray-400 text-xs sm:text-sm mt-1 font-light">Официальная гарантия на все установленные детали и услуги нашего сервиса.</p>
+                                <h3 class="font-extrabold text-sm sm:text-lg text-white">Гарантия на выполненные работы</h3>
+                                <p class="text-gray-400 text-xs mt-0.5 font-light">Официальная гарантия на все установленные детали и услуги нашего сервиса.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4 group">
+                        <div class="flex items-start space-x-4">
                             <div class="p-3 bg-garage-accent/10 rounded-xl text-garage-accent border border-garage-accent/30 shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
                             </div>
                             <div>
-                                <h3 class="font-extrabold text-base sm:text-lg text-white">Оборудование дилерского уровня</h3>
-                                <p class="text-gray-400 text-xs sm:text-sm mt-1 font-light">Современные диагностические стенды и сертифицированный инструмент для тяжелой техники.</p>
+                                <h3 class="font-extrabold text-sm sm:text-lg text-white">Оборудование дилерского уровня</h3>
+                                <p class="text-gray-400 text-xs mt-0.5 font-light">Современные диагностические стенды и сертифицированный инструмент для тяжелой техники.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4 group">
+                        <div class="flex items-start space-x-4">
                             <div class="p-3 bg-garage-accent/10 rounded-xl text-garage-accent border border-garage-accent/30 shrink-0">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                             </div>
                             <div>
-                                <h3 class="font-extrabold text-base sm:text-lg text-white">Удобный заезд в боксы</h3>
-                                <p class="text-gray-400 text-xs sm:text-sm mt-1 font-light">Просторная охраняемая территория в Spilve, Babīte. Легкий съезд с трассы для длинномерных сцепок.</p>
+                                <h3 class="font-extrabold text-sm sm:text-lg text-white">Удобный заезд в боксы</h3>
+                                <p class="text-gray-400 text-xs mt-0.5 font-light">Просторная охраняемая территория в Spilve, Babīte. Легкий съезд с трассы для длинномерных сцепок.</p>
                             </div>
                         </div>
                     </div>
@@ -247,145 +246,143 @@
     </section>
 
     <!-- Раздел: Услуги грузового автосервиса (Services) -->
-    <section id="services" class="py-20 bg-black/60 border-y border-white/5 relative z-10 backdrop-blur-xl max-w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-black tracking-tight uppercase">Наши услуги по <span class="text-transparent bg-clip-text bg-gradient-to-r from-garage-accent to-pink-500">ремонту</span></h2>
+    <section id="services" class="py-20 bg-black/60 border-y border-white/5 relative z-10 backdrop-blur-xl">
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-4xl font-black tracking-tight uppercase">Наши услуги по <span class="text-transparent bg-clip-text bg-gradient-to-r from-garage-accent to-pink-500">ремонту</span></h2>
                 <div class="h-1 w-20 bg-garage-accent mx-auto mt-4 rounded-full"></div>
                 <p class="text-gray-400 text-xs sm:text-sm mt-4 font-light">Обслуживаем тягачи и спецтехнику Scania, Volvo, MAN, DAF, Mercedes-Benz, Iveco, Renault.</p>
             </div>
 
             <!-- Сетка услуг -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                
-                <!-- Услуга 1: Ремонт ДВС -->
-                <div class="cyber-card p-6 rounded-xl group flex flex-col justify-between">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+                <!-- Услуга 1 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
                     <div>
-                        <div class="text-garage-accent mb-6 bg-garage-accent/10 p-4 rounded-xl w-fit border border-garage-accent/20">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31 2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31 2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                         </div>
-                        <h3 class="font-extrabold text-lg sm:text-xl mb-3">Ремонт ДВС и КПП</h3>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Ремонт ДВС и КПП</h3>
                         <p class="text-gray-400 text-xs leading-relaxed font-light">Капитальный ремонт дизельных двигателей и коробок передач грузовых авто.</p>
                     </div>
-                    <a href="#request" class="text-xs font-bold text-garage-accent mt-6 inline-flex items-center space-x-2">
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
                         <span>Записаться</span><span>→</span>
                     </a>
                 </div>
 
-                <!-- Услуга 2: Диагностика -->
-                <div class="cyber-card p-6 rounded-xl group flex flex-col justify-between">
+                <!-- Услуга 2 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
                     <div>
-                        <div class="text-garage-accent mb-6 bg-garage-accent/10 p-4 rounded-xl w-fit border border-garage-accent/20">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
                         </div>
-                        <h3 class="font-extrabold text-lg sm:text-xl mb-3">Диагностика и Электрика</h3>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Диагностика и Электрика</h3>
                         <p class="text-gray-400 text-xs leading-relaxed font-light">Компьютерная диагностика ЭБУ, поиск неисправностей в проводке и датчиках.</p>
                     </div>
-                    <a href="#request" class="text-xs font-bold text-garage-accent mt-6 inline-flex items-center space-x-2">
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
                         <span>Записаться</span><span>→</span>
                     </a>
                 </div>
 
-                <!-- Услуга 3: Ходовая -->
-                <div class="cyber-card p-6 rounded-xl group flex flex-col justify-between">
+                <!-- Услуга 3 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
                     <div>
-                        <div class="text-garage-accent mb-6 bg-garage-accent/10 p-4 rounded-xl w-fit border border-garage-accent/20">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 8a8 8 0 11-16 0 8 8 0 0116 0z"/></svg>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 8a8 8 0 11-16 0 8 8 0 0116 0z"/></svg>
                         </div>
-                        <h3 class="font-extrabold text-lg sm:text-xl mb-3">Ходовая часть</h3>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Ходовая часть</h3>
                         <p class="text-gray-400 text-xs leading-relaxed font-light">Ремонт осей SAF, BPW, ROR. Замена рессор, сайлентблоков, амортизаторов тягача.</p>
                     </div>
-                    <a href="#request" class="text-xs font-bold text-garage-accent mt-6 inline-flex items-center space-x-2">
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
                         <span>Записаться</span><span>→</span>
                     </a>
                 </div>
 
-                <!-- Услуга 4: Пневматика -->
-                <div class="cyber-card p-6 rounded-xl group flex flex-col justify-between">
+                <!-- Услуга 4 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
                     <div>
-                        <div class="text-garage-accent mb-6 bg-garage-accent/10 p-4 rounded-xl w-fit border border-garage-accent/20">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.24.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.001-1.22-.843-1.992-1.413a1 1 0 00-1.175 0l-3.97 2.883a1 1 0 00-.364-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 10.1c-.773-.57-.375-1.81.587-1.81h4.907a1 1 0 00.95-.69l1.519-4.674z"/></svg>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.24.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.001-1.22-.843-1.992-1.413a1 1 0 00-1.175 0l-3.97 2.883a1 1 0 00-.364-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 10.1c-.773-.57-.375-1.81.587-1.81h4.907a1 1 0 00.95-.69l1.519-4.674z"/></svg>
                         </div>
-                        <h3 class="font-extrabold text-lg sm:text-xl mb-3">Пневматика и Тормоза</h3>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Пневматика и Тормоза</h3>
                         <p class="text-gray-400 text-xs leading-relaxed font-light">Ремонт суппортов, регулировка ABS/EBS тормозных систем прицепов (Wabco).</p>
                     </div>
-                    <a href="#request" class="text-xs font-bold text-garage-accent mt-6 inline-flex items-center space-x-2">
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
                         <span>Записаться</span><span>→</span>
                     </a>
                 </div>
 
-                <!-- Услуга 5: ТО -->
-                <div class="cyber-card p-6 rounded-xl group flex flex-col justify-between">
+                <!-- Услуга 5 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
                     <div>
-                        <div class="text-garage-accent mb-6 bg-garage-accent/10 p-4 rounded-xl w-fit border border-garage-accent/20">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
                         </div>
-                        <h3 class="font-extrabold text-lg sm:text-xl mb-3">Техническое обслуживание</h3>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Техническое обслуживание</h3>
                         <p class="text-gray-400 text-xs leading-relaxed font-light">Экспресс-замена масел, замена воздушных, топливных и масляных фильтров.</p>
                     </div>
-                    <a href="#request" class="text-xs font-bold text-garage-accent mt-6 inline-flex items-center space-x-2">
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
                         <span>Записаться</span><span>→</span>
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Раздел: Почему доверяют IMIŠ Serviss (Advantages) -->
-    <section id="advantages" class="py-20 relative z-10 max-w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="advantages" class="py-20 relative z-10">
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                 
                 <!-- Описание преимуществ -->
-                <div class="space-y-6">
-                    <h2 class="text-3xl sm:text-4xl font-black tracking-tight uppercase leading-tight">
+                <div class="space-y-4">
+                    <h2 class="text-2xl sm:text-4xl font-black tracking-tight uppercase leading-tight">
                         Комплексный подход к <br class="hidden sm:block">
                         <span class="text-cyber-gradient">грузовому ремонту</span>
                     </h2>
-                    <p class="text-gray-400 leading-relaxed font-light text-base sm:text-lg">
-                        Мы понимаем, что каждый день простоя коммерческого транспорта — это прямые убытки для вашего бизнеса. Сервис IMIŠ Serviss делает все, чтобы вернуть ваш грузовик на рейс в кратчайшие сроки без компромиссов в качестве.
+                    <p class="text-gray-400 leading-relaxed font-light text-sm sm:text-lg">
+                        Мы понимаем, что каждый день простоя коммерческого транспорта — это прямые убытки для вашего бизнеса. Сервис IMIŠ Serviss делает все, чтобы вернуть ваш грузовик на рейс в кратчайшие сроки.
                     </p>
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-3 h-3 rounded-full bg-garage-accent shrink-0"></div>
-                            <span class="font-semibold text-gray-200 text-sm sm:text-base">Штат профессиональных мастеров с опытом ремонта тяжелой техники</span>
+                    <div class="space-y-3 pt-2 text-xs sm:text-base">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2.5 h-2.5 rounded-full bg-garage-accent shrink-0"></div>
+                            <span class="font-semibold text-gray-200">Штат профессиональных мастеров с опытом</span>
                         </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-3 h-3 rounded-full bg-garage-accent shrink-0"></div>
-                            <span class="font-semibold text-gray-200 text-sm sm:text-base">Собственный склад запчастей для оперативного ремонта</span>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2.5 h-2.5 rounded-full bg-garage-accent shrink-0"></div>
+                            <span class="font-semibold text-gray-200">Собственный склад востребованных запчастей</span>
                         </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-3 h-3 rounded-full bg-garage-accent shrink-0"></div>
-                            <span class="font-semibold text-gray-200 text-sm sm:text-base">Гибкие условия работы и постоплаты для корпоративных клиентов</span>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2.5 h-2.5 rounded-full bg-garage-accent shrink-0"></div>
+                            <span class="font-semibold text-gray-200">Гибкие условия работы для юрлиц</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Блоки со статистикой -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div class="cyber-card p-6 sm:p-8 text-center relative overflow-hidden">
-                        <div class="text-4xl sm:text-5xl font-black text-garage-accent tracking-wider">3 бокса</div>
-                        <p class="font-bold text-white mt-2 text-base sm:text-lg">Просторный сервис</p>
-                        <p class="text-gray-400 text-xs mt-1 font-light">Оборудованные посты под тягачи и полуприцепы.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="cyber-card p-5 text-center relative overflow-hidden">
+                        <div class="text-3xl sm:text-5xl font-black text-garage-accent tracking-wider">3 бокса</div>
+                        <p class="font-bold text-white mt-1 text-sm sm:text-lg">Просторный сервис</p>
+                        <p class="text-gray-400 text-[11px] mt-0.5 font-light">Оборудованные посты под тягачи.</p>
                     </div>
 
-                    <div class="cyber-card p-6 sm:p-8 text-center relative overflow-hidden">
-                        <div class="text-4xl sm:text-5xl font-black text-garage-accent tracking-wider">99%</div>
-                        <p class="font-bold text-white mt-2 text-base sm:text-lg">Точность диагностики</p>
-                        <p class="text-gray-400 text-xs mt-1 font-light">Быстро находим и локализуем неисправность.</p>
+                    <div class="cyber-card p-5 text-center relative overflow-hidden">
+                        <div class="text-3xl sm:text-5xl font-black text-garage-accent tracking-wider">99%</div>
+                        <p class="font-bold text-white mt-1 text-sm sm:text-lg">Точность диагностики</p>
+                        <p class="text-gray-400 text-[11px] mt-0.5 font-light">Быстро локализуем поломку.</p>
                     </div>
 
-                    <div class="cyber-card p-6 sm:p-8 text-center relative overflow-hidden">
-                        <div class="text-4xl sm:text-5xl font-black text-garage-accent tracking-wider">24/7</div>
-                        <p class="font-bold text-white mt-2 text-base sm:text-lg">Прием по звонку</p>
-                        <p class="text-gray-400 text-xs mt-1 font-light">Готовы принять технику при аварийных поломках.</p>
+                    <div class="cyber-card p-5 text-center relative overflow-hidden">
+                        <div class="text-3xl sm:text-5xl font-black text-garage-accent tracking-wider">24/7</div>
+                        <p class="font-bold text-white mt-1 text-sm sm:text-lg">Прием по звонку</p>
+                        <p class="text-gray-400 text-[11px] mt-0.5 font-light">Готовы принять при аварии.</p>
                     </div>
 
-                    <div class="cyber-card p-6 sm:p-8 text-center relative overflow-hidden">
-                        <div class="text-4xl sm:text-5xl font-black text-garage-accent tracking-wider">0 €</div>
-                        <p class="font-bold text-white mt-2 text-base sm:text-lg">Скрытых платежей</p>
-                        <p class="text-gray-400 text-xs mt-1 font-light">Все согласования работ строго до начала ремонта.</p>
+                    <div class="cyber-card p-5 text-center relative overflow-hidden">
+                        <div class="text-3xl sm:text-5xl font-black text-garage-accent tracking-wider">0 €</div>
+                        <p class="font-bold text-white mt-1 text-sm sm:text-lg">Скрытых платежей</p>
+                        <p class="text-gray-400 text-[11px] mt-0.5 font-light">Согласование строго до ремонта.</p>
                     </div>
                 </div>
 
@@ -394,50 +391,50 @@
     </section>
 
     <!-- Раздел: Форма отправки заявки (Request Form) -->
-    <section id="request" class="py-20 bg-black/50 border-t border-white/5 relative z-10 backdrop-blur-xl max-w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="request" class="py-20 bg-black/50 border-t border-white/5 relative z-10 backdrop-blur-xl">
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 
                 <!-- Левый промо-блок формы -->
-                <div class="lg:col-span-5 space-y-4 sm:space-y-6">
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight">
+                <div class="lg:col-span-5 space-y-4">
+                    <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tight">
                         Запишитесь на <br class="hidden sm:block">
                         <span class="text-cyber-gradient">диагностику СТО</span>
                     </h2>
-                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-light">
-                        Опишите неисправность или укажите необходимые сервисные работы. Наш технический специалист свяжется с вами, чтобы обсудить время заезда.
+                    <p class="text-gray-400 text-xs sm:text-base leading-relaxed font-light">
+                        Опишите неисправность. Наш технический специалист свяжется с вами, чтобы обсудить точное время заезда.
                     </p>
                     
-                    <div class="bg-gradient-to-r from-garage-700/50 to-transparent p-4 sm:p-6 rounded-xl border-l-4 border-garage-accent space-y-2">
-                        <h4 class="font-bold text-white text-sm sm:text-base flex items-center gap-3">
-                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <div class="bg-gradient-to-r from-garage-700/50 to-transparent p-4 rounded-xl border-l-4 border-garage-accent space-y-1">
+                        <h4 class="font-bold text-white text-xs sm:text-base flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                             Мастер-приемщик на связи
                         </h4>
-                        <p class="text-xs text-gray-400 font-light">Мы оперативно забронируем свободное время в боксе для вашего тягача.</p>
+                        <p class="text-[11px] text-gray-400 font-light">Оперативно забронируем свободное место в боксе.</p>
                     </div>
                 </div>
 
                 <!-- Правая часть: Форма -->
                 <div class="lg:col-span-7 w-full">
-                    <div class="bg-garage-800/90 border border-white/10 p-6 sm:p-8 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-xl">
+                    <div class="bg-garage-800/90 border border-white/10 p-5 sm:p-8 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-xl">
                         <form id="partsForm" class="space-y-4 sm:space-y-6 relative z-10">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2" for="clientName">Имя или компания</label>
-                                    <input type="text" id="clientName" required class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3.5 text-white text-sm focus:border-garage-accent focus:ring-1 focus:ring-garage-accent outline-none" placeholder="Контактное лицо">
+                                    <label class="block text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5" for="clientName">Имя или компания</label>
+                                    <input type="text" id="clientName" required class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-3 text-white text-xs sm:text-sm focus:border-garage-accent focus:ring-1 focus:ring-garage-accent outline-none" placeholder="Контактное лицо">
                                 </div>
                                 <div>
-                                    <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2" for="clientPhone">Телефон для связи</label>
-                                    <input type="tel" id="clientPhone" required class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3.5 text-white text-sm focus:border-garage-accent focus:ring-1 focus:ring-garage-accent outline-none" placeholder="+371 29215755">
+                                    <label class="block text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5" for="clientPhone">Телефон для связи</label>
+                                    <input type="tel" id="clientPhone" required class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-3 text-white text-xs sm:text-sm focus:border-garage-accent focus:ring-1 focus:ring-garage-accent outline-none" placeholder="+371 29215755">
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2" for="clientMessage">Описание поломки и марка авто</label>
-                                <textarea id="clientMessage" rows="4" required class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3.5 text-white text-sm focus:border-garage-accent focus:ring-1 focus:ring-garage-accent outline-none" placeholder="Например: Scania R420, замена сцепления"></textarea>
+                                <label class="block text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5" for="clientMessage">Описание поломки и марка авто</label>
+                                <textarea id="clientMessage" rows="4" required class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-3 text-white text-xs sm:text-sm focus:border-garage-accent focus:ring-1 focus:ring-garage-accent outline-none" placeholder="Например: Scania R420, замена сцепления"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full laser-btn bg-garage-accent hover:bg-garage-accentHover text-white font-black py-4 rounded-lg tracking-widest uppercase text-xs sm:text-sm">
+                            <button type="submit" class="w-full laser-btn bg-garage-accent hover:bg-garage-accentHover text-white font-black py-3.5 rounded-lg tracking-widest uppercase text-xs sm:text-sm">
                                 Отправить заявку в сервис
                             </button>
                         </form>
@@ -449,44 +446,44 @@
     </section>
 
     <!-- Раздел: Контакты -->
-    <section id="contacts" class="py-20 relative z-10 max-w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="contacts" class="py-20 relative z-10">
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 
                 <!-- Информация -->
-                <div class="lg:col-span-5 space-y-6 sm:space-y-8">
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight">Контакты сервиса</h2>
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tight">Контакты сервиса</h2>
                     
-                    <div class="space-y-5 sm:space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <span class="text-lg p-2.5 bg-white/5 rounded-xl border border-white/5 shrink-0">📍</span>
+                    <div class="space-y-4 sm:space-y-6">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-base p-2 bg-white/5 rounded-xl border border-white/5 shrink-0">📍</span>
                             <div>
-                                <h4 class="font-bold text-base sm:text-lg">Наш адрес</h4>
-                                <p class="text-gray-400 text-xs sm:text-sm mt-1 font-light">"Grietēni", Spilve, Babītes pagasts, Mārupes novads, LV-2101</p>
+                                <h4 class="font-bold text-sm sm:text-lg">Наш адрес</h4>
+                                <p class="text-gray-400 text-xs mt-0.5 font-light">"Grietēni", Spilve, Babītes pagasts, Mārupes novads, LV-2101</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4">
-                            <span class="text-lg p-2.5 bg-white/5 rounded-xl border border-white/5 shrink-0">📞</span>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-base p-2 bg-white/5 rounded-xl border border-white/5 shrink-0">📞</span>
                             <div>
-                                <h4 class="font-bold text-base sm:text-lg">Телефон для записи</h4>
-                                <a href="tel:+37129215755" class="text-garage-accent font-black text-xl sm:text-2xl hover:underline mt-1 block tracking-wider">+371 29215755</a>
+                                <h4 class="font-bold text-sm sm:text-lg">Телефон для записи</h4>
+                                <a href="tel:+37129215755" class="text-garage-accent font-black text-lg sm:text-2xl hover:underline mt-0.5 block tracking-wider">+371 29215755</a>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4">
-                            <span class="text-lg p-2.5 bg-white/5 rounded-xl border border-white/5 shrink-0">✉️</span>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-base p-2 bg-white/5 rounded-xl border border-white/5 shrink-0">✉️</span>
                             <div>
-                                <h4 class="font-bold text-base sm:text-lg">E-mail</h4>
-                                <a href="mailto:info@imis.lv" class="text-gray-300 text-sm sm:text-base hover:text-garage-accent transition-colors mt-1 block">info@imis.lv</a>
+                                <h4 class="font-bold text-sm sm:text-lg">E-mail</h4>
+                                <a href="mailto:info@imis.lv" class="text-gray-300 text-xs sm:text-base hover:text-garage-accent transition-colors mt-0.5 block">info@imis.lv</a>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4">
-                            <span class="text-lg p-2.5 bg-white/5 rounded-xl border border-white/5 shrink-0">🕒</span>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-base p-2 bg-white/5 rounded-xl border border-white/5 shrink-0">🕒</span>
                             <div>
-                                <h4 class="font-bold text-base sm:text-lg">Режим работы</h4>
-                                <p class="text-gray-400 text-xs sm:text-sm mt-1 font-light">Ежедневно: с 09:00 до 19:00 (без выходных)</p>
+                                <h4 class="font-bold text-sm sm:text-lg">Режим работы</h4>
+                                <p class="text-gray-400 text-xs mt-0.5 font-light">Ежедневно: с 09:00 до 19:00 (без выходных)</p>
                             </div>
                         </div>
                     </div>
@@ -494,15 +491,15 @@
 
                 <!-- Интерактивная Карта -->
                 <div class="lg:col-span-7 w-full">
-                    <div class="bg-garage-800 border border-white/10 rounded-2xl overflow-hidden relative h-[350px] sm:h-[450px] shadow-2xl flex flex-col justify-between group">
+                    <div class="bg-garage-800 border border-white/10 rounded-2xl overflow-hidden relative h-[300px] sm:h-[450px] shadow-2xl flex flex-col justify-between group">
                         <div class="absolute inset-0 z-0 grayscale contrast-125 brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-100">
                             <iframe class="absolute inset-0 w-full h-full border-0" src="https://maps.google.com/maps?q=Griet%C4%93ni%2C%20Spilve%2C%20Bab%C4%ABtes%20pagasts&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         
-                        <div class="relative z-10 m-4 sm:m-6 p-4 bg-garage-900/95 border border-white/10 rounded-xl max-w-xs backdrop-blur-xl shadow-2xl">
-                            <span class="inline-block bg-garage-accent text-white font-black text-[9px] px-2.5 py-0.5 rounded tracking-widest uppercase">СТО в Spilve</span>
-                            <h4 class="text-white font-black text-base mt-2">IMIŠ Serviss</h4>
-                            <p class="text-gray-400 text-[11px] mt-1 font-light leading-relaxed">"Grietēni", Spilve. Удобный съезд с Рижской окружной автотрассы для фур.</p>
+                        <div class="relative z-10 m-4 p-4 bg-garage-900/95 border border-white/10 rounded-xl max-w-[240px] sm:max-w-xs backdrop-blur-xl shadow-2xl">
+                            <span class="inline-block bg-garage-accent text-white font-black text-[8px] px-2 py-0.5 rounded tracking-widest uppercase">СТО в Spilve</span>
+                            <h4 class="text-white font-black text-sm mt-1">IMIŠ Serviss</h4>
+                            <p class="text-gray-400 text-[10px] mt-1 font-light leading-relaxed">"Grietēni", Spilve. Удобный съезд с Рижской окружной автотрассы для фур.</p>
                         </div>
                     </div>
                 </div>
@@ -512,16 +509,16 @@
     </section>
 
     <!-- Подвал сайта (Footer) -->
-    <footer class="bg-black border-t border-white/10 py-12 relative z-10 text-center text-xs sm:text-sm text-gray-400 max-w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <div class="font-black tracking-widest text-white text-2xl sm:text-4xl flex items-center justify-center space-x-3">
-                <span class="bg-garage-accent text-white px-4 py-1 sm:px-5 sm:py-2 rounded text-xl sm:text-3xl">I</span>
+    <footer class="bg-black border-t border-white/10 py-10 text-center text-xs text-gray-400">
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-4 space-y-4">
+            <div class="font-black tracking-widest text-white text-xl sm:text-4xl flex items-center justify-center space-x-2">
+                <span class="bg-garage-accent text-white px-3 py-0.5 sm:px-5 sm:py-2 rounded text-base sm:text-3xl">I</span>
                 <span>IMIŠ SERVISS</span>
             </div>
-            <div class="text-[10px] sm:text-xs text-gray-500 max-w-md mx-auto leading-relaxed font-light">
+            <div class="text-[9px] sm:text-xs text-gray-500 max-w-md mx-auto leading-relaxed font-light">
                 SIA "IMIŠ" &bull; Reģ. Nr. 40203000000 &bull; "Grietēni", Spilve, Babītes pagasts, Mārupes novads, LV-2101
             </div>
-            <p class="text-[10px] text-gray-600 font-light">&copy; 2026 IMIŠ SERVISS. Visas tiesības aizsargātas.</p>
+            <p class="text-[9px] text-gray-600 font-light">&copy; 2026 IMIŠ SERVISS. Visas tiesības aizsargātas.</p>
         </div>
     </footer>
 
