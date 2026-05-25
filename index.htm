@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IMIŠ Serviss — Профессиональный ремонт грузовых автомобилей в Латвии</title>
+    <title>IMISH Serviss — Профессиональный ремонт грузовых автомобилей в Латвии</title>
     
     <!-- Подключение шрифта Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -117,6 +117,9 @@
 </head>
 <body class="bg-garage-900 text-white font-sans antialiased selection:bg-garage-accent selection:text-white relative min-h-screen w-full overflow-x-hidden">
 
+    <!-- Точка привязки для открытия страницы с самого верха -->
+    <div id="top"></div>
+
     <!-- ТЕХНОЛОГИЧНЫЙ ИНТЕРАКТИВНЫЙ ФОН -->
     <div class="absolute inset-0 cyber-perspective pointer-events-none z-0 overflow-hidden w-full">
         <div class="absolute inset-0 cyber-grid opacity-70"></div>
@@ -128,19 +131,18 @@
 
     <!-- Шапка сайта (Header) -->
     <header class="fixed top-0 left-0 w-full z-40 bg-garage-900/60 backdrop-blur-2xl border-b border-white/10 overflow-hidden">
-        <!-- max-w-[95vw] сужает шапку на 5% на мобилках, mx-auto центрирует её обратно -->
         <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-1 sm:px-6 lg:px-8 h-20 flex flex-row items-center justify-between sm:justify-start gap-x-2 sm:gap-x-6">
             
-            <!-- Компактный логотип -->
-            <a href="#" class="flex items-center space-x-1.5 sm:space-x-4 group shrink-0">
+            <!-- Компактный логотип (ведет строго наверх страницы) -->
+            <a href="#top" class="flex items-center space-x-1.5 sm:space-x-4 group shrink-0">
                 <div class="bg-garage-accent text-white font-black text-base sm:text-3xl px-2 sm:px-5 py-0.5 sm:py-2 rounded-md tracking-wider transform transition-all duration-500 group-hover:rotate-[360deg]">I</div>
                 <div class="flex flex-col">
-                    <span class="font-extrabold text-base sm:text-3xl tracking-widest text-white leading-none group-hover:text-garage-accent transition-colors duration-300">IMIŠ</span>
+                    <span class="font-extrabold text-base sm:text-3xl tracking-widest text-white leading-none group-hover:text-garage-accent transition-colors duration-300">IMISH</span>
                     <span class="font-bold text-[8px] sm:text-[13px] tracking-[0.18em] sm:tracking-[0.35em] text-gray-400 uppercase leading-none mt-1 sm:mt-2">SERVISS</span>
                 </div>
             </a>
 
-            <!-- Кнопка Позвонить: Текст гарантированно не переносится, кнопка не сжимается -->
+            <!-- Кнопка Позвонить для мобильных -->
             <div class="inline-block sm:hidden shrink-0">
                 <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py-2 px-2.5 rounded-lg flex items-center space-x-1 transition-all hover:bg-white/10 hover:border-garage-accent/50 group">
                     <svg class="w-3 h-3 text-garage-accent group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -160,8 +162,8 @@
 
             <!-- Блок для ПК-кнопок -->
             <div class="hidden sm:flex items-center space-x-3 shrink-0 ml-auto">
-                <a href="tel:+37129215755" class="laser-btn bg-white/5 border border-white/10 text-white font-bold py.2.5 px-4 rounded-lg flex items-center space-x-2 text-sm transition-all hover:bg-white/10 hover:border-garage-accent/50 group">
-                    <svg class="w-4 h-4 text-garage-accent group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <a href="tel:+37129215755" class="laser-btn bg-garage-accent border border-white/40 text-white font-bold py-2.5 px-4 rounded-lg flex items-center space-x-2 text-sm transition-all hover:bg-garage-accentHover shadow-[0_0_20px_rgba(255,0,60,0.4)] group">
+                    <svg class="w-4 h-4 text-white group-hover:animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.529 4.528l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-1C7.42 18 2 12.58 2 6V3z"/>
                     </svg>
                     <span class="tracking-wide font-black whitespace-nowrap">+371 29215755</span>
@@ -175,11 +177,10 @@
 
     <!-- Главный экран (Hero Section) -->
     <section class="relative pt-28 pb-16 lg:pt-52 lg:pb-36 flex items-center overflow-hidden w-full">
-        <!-- Контейнеры сжаты на 5% (max-w-[95vw]) на мобильных -->
-        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
             <!-- Описание автосервиса -->
-            <div class="lg:col-span-7 space-y-6 sm:space-y-8 max-w-2xl w-full">
+            <div class="lg:col-span-8 space-y-6 sm:space-y-8 max-w-3xl w-full">
                 <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-garage-accent/20 to-cyan-500/10 border border-garage-accent/40 px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider text-white uppercase max-w-full">
                     <span class="w-2 h-2 rounded-full bg-garage-accent shrink-0"></span>
                     <span class="truncate">Ремонт грузового транспорта в Латвии</span>
@@ -190,7 +191,7 @@
                 </h1>
                 
                 <p class="text-gray-400 text-sm sm:text-xl max-w-xl leading-relaxed font-light">
-                    Специализированный грузовой сервис IMIŠ Serviss в Spilve. Оказываем полный комплекс услуг по техническому обслуживанию тягачей, прицепов и спецтехники ведущих европейских марок.
+                    Специализированный грузовой сервис IMISH Serviss в Spilve. Оказываем полный комплекс услуг по техническому обслуживанию тягачей, прицепов и спецтехники ведущих европейских марок.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-2">
@@ -205,8 +206,8 @@
             </div>
 
             <!-- Правая часть: Быстрый виджет с преимуществами СТО -->
-            <div class="lg:col-span-5 w-full">
-                <div class="cyber-card p-5 sm:p-8 rounded-2xl border border-white/10 relative overflow-hidden backdrop-blur-xl">
+            <div class="lg:col-span-4 w-full">
+                <div class="cyber-card p-5 sm:p-6 rounded-2xl border border-white/10 relative overflow-hidden backdrop-blur-xl">
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl"></div>
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
@@ -214,7 +215,7 @@
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                             </div>
                             <div>
-                                <h3 class="font-extrabold text-sm sm:text-lg text-white">Гарантия на выполненные работы</h3>
+                                <h3 class="font-extrabold text-sm sm:text-base text-white">Гарантия на выполненные работы</h3>
                                 <p class="text-gray-400 text-xs mt-0.5 font-light">Официальная гарантия на все установленные детали и услуги нашего сервиса.</p>
                             </div>
                         </div>
@@ -224,7 +225,7 @@
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
                             </div>
                             <div>
-                                <h3 class="font-extrabold text-sm sm:text-lg text-white">Оборудование дилерского уровня</h3>
+                                <h3 class="font-extrabold text-sm sm:text-base text-white">Оборудование дилерского уровня</h3>
                                 <p class="text-gray-400 text-xs mt-0.5 font-light">Современные диагностические стенды и сертифицированный инструмент для тяжелой техники.</p>
                             </div>
                         </div>
@@ -234,7 +235,7 @@
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                             </div>
                             <div>
-                                <h3 class="font-extrabold text-sm sm:text-lg text-white">Удобный заезд в боксы</h3>
+                                <h3 class="font-extrabold text-sm sm:text-base text-white">Удобный заезд в боксы</h3>
                                 <p class="text-gray-400 text-xs mt-0.5 font-light">Просторная охраняемая территория в Spilve, Babīte. Легкий съезд с трассы для длинномерных сцепок.</p>
                             </div>
                         </div>
@@ -254,8 +255,7 @@
                 <p class="text-gray-400 text-xs sm:text-sm mt-4 font-light">Обслуживаем тягачи и спецтехнику Scania, Volvo, MAN, DAF, Mercedes-Benz, Iveco, Renault.</p>
             </div>
 
-            <!-- Сетка услуг -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 <!-- Услуга 1 -->
                 <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
                     <div>
@@ -325,11 +325,53 @@
                         <span>Записаться</span><span>→</span>
                     </a>
                 </div>
+
+                <!-- Услуга 6 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-3M14 7h4"/></svg>
+                        </div>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Кузовной ремонт и покраска</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed font-light">Восстановление геометрии кабины, ремонт рам, сварочные работы и профессиональная покраска.</p>
+                    </div>
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
+                        <span>Записаться</span><span>→</span>
+                    </a>
+                </div>
+
+                <!-- Услуга 7 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Сопровождение на ТО</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed font-light">Полная подготовка техники, проверка параметров на стендах и сопровождение до получения допуска CSDD.</p>
+                    </div>
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
+                        <span>Записаться</span><span>→</span>
+                    </a>
+                </div>
+
+                <!-- Услуга 8 -->
+                <div class="cyber-card p-5 rounded-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="text-garage-accent mb-4 bg-garage-accent/10 p-3 rounded-xl w-fit border border-garage-accent/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        </div>
+                        <h3 class="font-extrabold text-base sm:text-xl mb-2">Регулировка фар и тормозной стенд</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed font-light">Проверка и настройка светового пучка оптики, а также комплексное тестирование эффективности тормозных усилий на стенде.</p>
+                    </div>
+                    <a href="#request" class="text-xs font-bold text-garage-accent mt-4 inline-flex items-center space-x-2">
+                        <span>Записаться</span><span>→</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Раздел: Почему доверяют IMIŠ Serviss (Advantages) -->
+    <!-- Раздел: Почему доверяют IMISH Serviss (Advantages) -->
     <section id="advantages" class="py-20 relative z-10">
         <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -341,7 +383,7 @@
                         <span class="text-cyber-gradient">грузовому ремонту</span>
                     </h2>
                     <p class="text-gray-400 leading-relaxed font-light text-sm sm:text-lg">
-                        Мы понимаем, что каждый день простоя коммерческого транспорта — это прямые убытки для вашего бизнеса. Сервис IMIŠ Serviss делает все, чтобы вернуть ваш грузовик на рейс в кратчайшие сроки.
+                        Мы понимаем, что каждый день простоя коммерческого транспорта — это прямые убытки для вашего бизнеса. Сервис IMISH Serviss делает все, чтобы вернуть ваш грузовик на рейс в кратчайшие сроки.
                     </p>
                     <div class="space-y-3 pt-2 text-xs sm:text-base">
                         <div class="flex items-center space-x-3">
@@ -475,7 +517,7 @@
                             <span class="text-base p-2 bg-white/5 rounded-xl border border-white/5 shrink-0">✉️</span>
                             <div>
                                 <h4 class="font-bold text-sm sm:text-lg">E-mail</h4>
-                                <a href="mailto:info@imis.lv" class="text-gray-300 text-xs sm:text-base hover:text-garage-accent transition-colors mt-0.5 block">info@imis.lv</a>
+                                <a href="mailto:info@imish.lv" class="text-gray-300 text-xs sm:text-base hover:text-garage-accent transition-colors mt-0.5 block">info@imish.lv</a>
                             </div>
                         </div>
 
@@ -492,13 +534,14 @@
                 <!-- Интерактивная Карта -->
                 <div class="lg:col-span-7 w-full">
                     <div class="bg-garage-800 border border-white/10 rounded-2xl overflow-hidden relative h-[300px] sm:h-[450px] shadow-2xl flex flex-col justify-between group">
-                        <div class="absolute inset-0 z-0 grayscale contrast-125 brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-100">
+                        <!-- Здесь были удалены фильтры grayscale, contrast и brightness -->
+                        <div class="absolute inset-0 z-0 transition-all duration-700">
                             <iframe class="absolute inset-0 w-full h-full border-0" src="https://maps.google.com/maps?q=Griet%C4%93ni%2C%20Spilve%2C%20Bab%C4%ABtes%20pagasts&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         
                         <div class="relative z-10 m-4 p-4 bg-garage-900/95 border border-white/10 rounded-xl max-w-[240px] sm:max-w-xs backdrop-blur-xl shadow-2xl">
                             <span class="inline-block bg-garage-accent text-white font-black text-[8px] px-2 py-0.5 rounded tracking-widest uppercase">СТО в Spilve</span>
-                            <h4 class="text-white font-black text-sm mt-1">IMIŠ Serviss</h4>
+                            <h4 class="text-white font-black text-sm mt-1">IMISH Serviss</h4>
                             <p class="text-gray-400 text-[10px] mt-1 font-light leading-relaxed">"Grietēni", Spilve. Удобный съезд с Рижской окружной автотрассы для фур.</p>
                         </div>
                     </div>
@@ -511,14 +554,14 @@
     <!-- Подвал сайта (Footer) -->
     <footer class="bg-black border-t border-white/10 py-10 text-center text-xs text-gray-400">
         <div class="max-w-[95vw] sm:max-w-7xl mx-auto px-4 space-y-4">
-            <div class="font-black tracking-widest text-white text-xl sm:text-4xl flex items-center justify-center space-x-2">
-                <span class="bg-garage-accent text-white px-3 py-0.5 sm:px-5 sm:py-2 rounded text-base sm:text-3xl">I</span>
-                <span>IMIŠ SERVISS</span>
-            </div>
+            <a href="#top" class="font-black tracking-widest text-white text-xl sm:text-4xl flex items-center justify-center space-x-2 group">
+                <span class="bg-garage-accent text-white px-3 py-0.5 sm:px-5 sm:py-2 rounded text-base sm:text-3xl transition-colors group-hover:bg-garage-accentHover">I</span>
+                <span class="group-hover:text-garage-accent transition-colors">IMISH SERVISS</span>
+            </a>
             <div class="text-[9px] sm:text-xs text-gray-500 max-w-md mx-auto leading-relaxed font-light">
-                SIA "IMIŠ" &bull; Reģ. Nr. 40203000000 &bull; "Grietēni", Spilve, Babītes pagasts, Mārupes novads, LV-2101
+                SIA "IMISH" &bull; Reģ. Nr. 40203000000 &bull; "Grietēni", Spilve, Babītes pagasts, Mārupes novads, LV-2101
             </div>
-            <p class="text-[9px] text-gray-600 font-light">&copy; 2026 IMIŠ SERVISS. Visas tiesības aizsargātas.</p>
+            <p class="text-[9px] text-gray-600 font-light">&copy; 2026 IMISH SERVISS. Visas tiesības aizsargātas.</p>
         </div>
     </footer>
 
