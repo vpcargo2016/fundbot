@@ -1,0 +1,16 @@
+{
+  "name": "fundbot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@reown/appkit": "^1.0.0",
+    "ethers": "^6.0.0"
+  }
+}
